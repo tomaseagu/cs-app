@@ -36,7 +36,7 @@ Console.WriteLine($"Caso 2 (Local)     : {sw2.ElapsedMilliseconds} ms. Resultado
 
 // Obligamos al JIT a NO optimizar esta función.
 // Esto lo forzará a ir a la memoria RAM/Caché en cada iteración.
-[MethodImpl(MethodImplOptions.NoOptimization)]
+//[MethodImpl(MethodImplOptions.NoOptimization)]
 void SumarConReferencia(ref int total)
 {
     total = 0;
@@ -48,7 +48,7 @@ void SumarConReferencia(ref int total)
 
 // También desactivamos optimización aquí para que la comparación de los bucles sea justa,
 // pero verás cómo el diseño de usar la variable local sigue siendo superior sin ayuda del JIT.
-[MethodImpl(MethodImplOptions.NoOptimization)]
+//[MethodImpl(MethodImplOptions.NoOptimization)]
 void SumarConLocal(ref int total)
 {
     int sumaLocal = 0;
